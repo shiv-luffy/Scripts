@@ -1,3 +1,5 @@
+# USAGE : crispr_output_reformat.sh INFILE OUTFILE
+
 OUTPUT=$(cat $1 | awk 'NR > 16' | sed 's/=//g' | sed 's/#//g' | sed 's/Crispr_begin_position://g' | sed 's/DR://g' | sed 's/Spacer_begin_position//g' | sed 's/Spacer_length//g' | sed 's/Spacer_sequence//g' | awk '{print $1"\t"$2"\t"$3}')
 cas_seq=$(echo "$OUTPUT" | awk 'FNR == 1 {print $1}')
 cas_len=$(echo "$OUTPUT" | awk 'FNR == 1 {$3=($3+1); print $3}')
