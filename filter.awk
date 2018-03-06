@@ -1,3 +1,5 @@
+#USAGE : filter.awk INFILE > OUTFILE
+
 BEGIN {OFS = "\t"}{i=7;
         while(i<NF){
                 a=i; b=i+1 ; c=i+2;
