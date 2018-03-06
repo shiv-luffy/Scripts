@@ -1,4 +1,4 @@
-{i=7;
+BEGIN {OFS = "\t"}{i=7;
         while(i<NF){
                 a=i; b=i+1 ; c=i+2;
                 split($a, x, ",");
